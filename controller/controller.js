@@ -4,6 +4,7 @@ exports.home = (req, res) => {
     res.send('Hello World!');
 }
 
+// Creating new user
 exports.createuser = async (req, res) => {
     try {
         const {
@@ -40,6 +41,7 @@ exports.createuser = async (req, res) => {
     }
 }
 
+// Reading Data
 exports.getUsers = async (req, res) => {
     try {
         const allData = await User.find({})
@@ -58,6 +60,7 @@ exports.getUsers = async (req, res) => {
     }
 }
 
+// Updating User Data
 exports.userEdit = async (req, res) => {
     try {
         const userEdit = await User.findByIdAndUpdate(req.params.id, req.body)
@@ -75,6 +78,7 @@ exports.userEdit = async (req, res) => {
     }
 }
 
+// Deleting Data
 exports.deleteUser = async (req, res) => {
     try {
         const id = req.params.id
